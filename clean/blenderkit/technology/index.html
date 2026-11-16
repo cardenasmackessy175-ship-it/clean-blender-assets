@@ -33,6 +33,7 @@ header{padding:clamp(20px,3vw,40px) 0 18px}
 #grid p{margin:8px 0 0;display:flex;justify-content:space-between;gap:10px;font-size:13px;line-height:1.35;color:var(--quiet)}
 #grid p span{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 #grid p span:first-child{color:var(--ink);font-variant-numeric:tabular-nums}
+#grid p.sid{display:block;margin:2px 0 0;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums;user-select:all}
 #none{padding:40px 0 120px;color:var(--quiet)}
 #lb{position:fixed;inset:0;z-index:9;display:none;background:rgba(12,13,15,.94);color:#ecedef}
 #lb.open{display:grid;grid-template-rows:minmax(0,1fr) auto;gap:12px;padding:20px clamp(12px,4vw,64px) 18px}
@@ -68,7 +69,7 @@ header{padding:clamp(20px,3vw,40px) 0 18px}
 <button class="ctl" id="prev" aria-label="previous">&#8249;</button><button class="ctl" id="next" aria-label="next">&#8250;</button>
 <button id="close" aria-label="close">&#215;</button>
 </div>
-<script id="tiles" type="application/json">{"s":["blenderkit-technology-00.webp?v=eaca9c0cb2","blenderkit-technology-01.webp?v=0acbddf7fc"],"t":[["blenderkit_1635","blenderkit","technology",0,2,0,15,1794743023,0,1,"blenderkit/technology/blenderkit_1635"],["blenderkit_0296","blenderkit","technology",0,3,0,0,1794411853,1,1,"blenderkit/technology/blenderkit_0296"],["blenderkit_0018","blenderkit","technology",0,4,0,15,1794748126,0,1,"blenderkit/technology/blenderkit_0018"],["blenderkit_1656","blenderkit","technology",0,5,0,15,1794749390,0,1,"blenderkit/technology/blenderkit_1656"],["blenderkit_1659","blenderkit","technology",0,6,0,15,1794802922,0,1,"blenderkit/technology/blenderkit_1659"],["blenderkit_0083","blenderkit","technology",0,7,0,15,1794743016,0,1,"blenderkit/technology/blenderkit_0083"],["blenderkit_1734","blenderkit","technology",0,9,0,15,1794743031,0,1,"blenderkit/technology/blenderkit_1734"],["blenderkit_0290","blenderkit","technology",1,1,1,0,1794802124,1,1,"blenderkit/technology/blenderkit_0290"],["blenderkit_1667","blenderkit","technology",1,2,0,15,1794802234,0,1,"blenderkit/technology/blenderkit_1667"],["blenderkit_0291","blenderkit","technology",1,7,0,15,1794802912,0,1,"blenderkit/technology/blenderkit_0291"],["blenderkit_1731","blenderkit","technology",1,9,0,15,1794743029,0,1,"blenderkit/technology/blenderkit_1731"]],"r":"/mnt/nas_beijing/users/zhanghejia/blender_assets","n":[1353,987,11],"c":{"technology":"Technology"}}</script>
+<script id="tiles" type="application/json">{"s":["blenderkit-technology-00.webp?v=eaca9c0cb2","blenderkit-technology-01.webp?v=0acbddf7fc"],"t":[["blenderkit_1635","blenderkit","technology",0,2,0,15,1794743023,0,1,"blenderkit/technology/blenderkit_1635","419b68fb-c815-43e7-b56f-4b4f88ec627a"],["blenderkit_0296","blenderkit","technology",0,3,0,0,1794411853,1,1,"blenderkit/technology/blenderkit_0296","edfee40d-ca96-40a6-9593-43d7c08dd368"],["blenderkit_0018","blenderkit","technology",0,4,0,15,1794748126,0,1,"blenderkit/technology/blenderkit_0018","c0f0a2b1-34b3-475a-b76b-d5b3c464af5e"],["blenderkit_1656","blenderkit","technology",0,5,0,15,1794749390,0,1,"blenderkit/technology/blenderkit_1656","b8d1965f-6867-4914-8575-87dd7c1fe5bb"],["blenderkit_1659","blenderkit","technology",0,6,0,15,1794802922,0,1,"blenderkit/technology/blenderkit_1659","d1362ac7-bf67-4818-8426-884bcfda1916"],["blenderkit_0083","blenderkit","technology",0,7,0,15,1794743016,0,1,"blenderkit/technology/blenderkit_0083","6a1c6ebb-817c-4a6d-87dd-521af5caede5"],["blenderkit_1734","blenderkit","technology",0,9,0,15,1794743031,0,1,"blenderkit/technology/blenderkit_1734","d167bf68-9cc8-496a-bcaf-37eefd346700"],["blenderkit_0290","blenderkit","technology",1,1,1,0,1794802124,1,1,"blenderkit/technology/blenderkit_0290","626afa9d-bdf6-4c12-8965-b819d96da71e"],["blenderkit_1667","blenderkit","technology",1,2,0,15,1794802234,0,1,"blenderkit/technology/blenderkit_1667","f188f404-3028-4d18-841d-550c99a5c75b"],["blenderkit_0291","blenderkit","technology",1,7,0,15,1794802912,0,1,"blenderkit/technology/blenderkit_0291","e595b879-f3df-468a-910c-40ec1d0baa4b"],["blenderkit_1731","blenderkit","technology",1,9,0,15,1794743029,0,1,"blenderkit/technology/blenderkit_1731","8feaee2f-e49e-47fa-9934-c4ece0f4d84f"]],"r":"/mnt/nas_beijing/users/zhanghejia/blender_assets","n":[1353,987,11],"c":{"technology":"Technology"}}</script>
 <script>
 (function(){
   var M='/media/',grid=document.getElementById('grid'),none=document.getElementById('none'),shown=null,D=null,tiles={},order=[],at=-1;
@@ -90,6 +91,7 @@ header{padding:clamp(20px,3vw,40px) 0 18px}
       if(!li){
         li=document.createElement('li');var b=document.createElement('button'),p=document.createElement('p'),a=document.createElement('span'),c=document.createElement('span');
         b.className='shot';b.type='button';p.appendChild(a);p.appendChild(c);li.appendChild(b);li.appendChild(p);li._b=b;li._a=a;li._c=c;
+        li._s=document.createElement('p');li._s.className='sid';li.appendChild(li._s);
         b.addEventListener('click',function(){open(order.indexOf(b._r[0]));});
         tiles[r[0]]=li;if(io)io.observe(b);else b._on=1;
       }
@@ -97,7 +99,7 @@ header{padding:clamp(20px,3vw,40px) 0 18px}
       if(!r[5]&&b._vid){b._vid.remove();b._vid=null;}
       b.style.backgroundPosition=((k%4*528+8)/16.0)+'% '+((Math.floor(k/4)*528+8)/10.72)+'%';
       if(b._on)paint(b);
-      li._a.textContent=r[0];li._c.textContent=D.c[r[2]]||r[2];b.setAttribute('aria-label',r[0]+' '+(D.c[r[2]]||r[2]));
+      li._a.textContent=r[0];li._c.textContent=D.c[r[2]]||r[2];li._s.textContent=r[11]||'';li._s.title=r[11]?r[1]+' ID '+r[11]:'';b.setAttribute('aria-label',r[0]+' '+(D.c[r[2]]||r[2]));
       seen[r[0]]=1;order.push(r[0]);frag.appendChild(li);
     });
     Object.keys(tiles).forEach(function(n){if(!seen[n]){if(io)io.unobserve(tiles[n]._b);tiles[n].remove();delete tiles[n];}});
@@ -119,7 +121,7 @@ header{padding:clamp(20px,3vw,40px) 0 18px}
       if(k==='anim')b.textContent='▶';else b.style.backgroundImage='url("'+(k==='preview'?M+'full/'+r[0]+'.webp?v='+r[7]:M+'v/'+r[0]+'_'+k+'.webp?v='+r[7])+'")';
       b.addEventListener('click',function(){show(k,r,b);});views.appendChild(b);});
     views.style.display=kinds.length>1?'flex':'none';
-    cap.innerHTML='';var b=document.createElement('b');b.textContent=r[0];cap.appendChild(b);cap.appendChild(document.createTextNode('  '+(D.c[r[2]]||r[2])+'  '+r[1]));
+    cap.innerHTML='';var b=document.createElement('b');b.textContent=r[0];cap.appendChild(b);cap.appendChild(document.createTextNode('  '+(D.c[r[2]]||r[2])+'  '+r[1]+(r[11]?'  '+r[11]:'')));
     show(kinds[0],r,views.children[0]);lb.className='open';document.body.style.overflow='hidden';document.getElementById('close').focus();
   }
   function shut(){lb.className='';stage.textContent='';document.body.style.overflow='';if(at>=0&&tiles[order[at]])tiles[order[at]]._b.focus();at=-1;}
@@ -129,8 +131,8 @@ header{padding:clamp(20px,3vw,40px) 0 18px}
   // Export list: the assets of this page as a tab-separated file, same layout as blender_assets/clean_assets.tsv plus category and cleaned
   document.getElementById('export').addEventListener('click',function(){
     var cell=function(x){return String(x).replace(/[\t\r\n]+/g,' ');};
-    var lines=[['编号','资产类型','网站来源','分类','已清洗','资产目录'].join('\t')];
-    D.t.forEach(function(r){lines.push([r[0],r[8]?'dynamic':'static',r[1],D.c[r[2]]||r[2],r[9]?'是':'否',r[10]?D.r+'/'+r[10]:''].map(cell).join('\t'));});
+    var lines=[['编号','资产类型','网站来源','源站ID','分类','已清洗','资产目录'].join('\t')];
+    D.t.forEach(function(r){lines.push([r[0],r[8]?'dynamic':'static',r[1],r[11]||'',D.c[r[2]]||r[2],r[9]?'是':'否',r[10]?D.r+'/'+r[10]:''].map(cell).join('\t'));});
     var part=location.pathname.split('/').filter(Boolean),at=Math.max(part.indexOf('total'),part.indexOf('clean'));
     var name=(at<0?['total']:part.slice(at)).map(decodeURIComponent).join('_').replace(/[^\w.-]+/g,'-');
     var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([lines.join('\n')+'\n'],{type:'text/tab-separated-values;charset=utf-8'}));

@@ -33,6 +33,7 @@ header{padding:clamp(20px,3vw,40px) 0 18px}
 #grid p{margin:8px 0 0;display:flex;justify-content:space-between;gap:10px;font-size:13px;line-height:1.35;color:var(--quiet)}
 #grid p span{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 #grid p span:first-child{color:var(--ink);font-variant-numeric:tabular-nums}
+#grid p.sid{display:block;margin:2px 0 0;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums;user-select:all}
 #none{padding:40px 0 120px;color:var(--quiet)}
 #lb{position:fixed;inset:0;z-index:9;display:none;background:rgba(12,13,15,.94);color:#ecedef}
 #lb.open{display:grid;grid-template-rows:minmax(0,1fr) auto;gap:12px;padding:20px clamp(12px,4vw,64px) 18px}
@@ -68,7 +69,7 @@ header{padding:clamp(20px,3vw,40px) 0 18px}
 <button class="ctl" id="prev" aria-label="previous">&#8249;</button><button class="ctl" id="next" aria-label="next">&#8250;</button>
 <button id="close" aria-label="close">&#215;</button>
 </div>
-<script id="tiles" type="application/json">{"s":["budeco-vehicles-00.webp?v=f6e1173e74","budeco-vehicles-01.webp?v=1f89182d96"],"t":[["budeco_1104","budeco","vehicles",0,0,0,0,1794324166,0,1,"budeco/vehicles/budeco_1104"],["budeco_1163","budeco","vehicles",0,1,1,0,1794324380,1,1,"budeco/vehicles/budeco_1163"],["budeco_1171","budeco","vehicles",0,5,0,0,1794325028,0,1,"budeco/vehicles/budeco_1171"],["budeco_1174","budeco","vehicles",0,6,0,0,1794333450,0,1,"budeco/vehicles/budeco_1174"],["budeco_1167","budeco","vehicles",0,8,0,0,1794325026,0,1,"budeco/vehicles/budeco_1167"],["budeco_1172","budeco","vehicles",0,9,0,0,1794325029,0,1,"budeco/vehicles/budeco_1172"],["budeco_1177","budeco","vehicles",0,10,0,0,1794363733,0,1,"budeco/vehicles/budeco_1177"],["budeco_1173","budeco","vehicles",0,11,0,0,1794333452,0,1,"budeco/vehicles/budeco_1173"],["budeco_1160","budeco","vehicles",1,0,0,0,1794363812,0,1,"budeco/vehicles/budeco_1160"],["budeco_1457","budeco","vehicles",1,4,0,0,1794566121,1,1,"budeco/vehicles/budeco_1457"],["budeco_1449","budeco","vehicles",1,5,0,15,1794564217,0,1,"budeco/vehicles/budeco_1449"],["budeco_1467","budeco","vehicles",1,7,0,15,1794564737,0,1,"budeco/vehicles/budeco_1467"]],"r":"/mnt/nas_beijing/users/zhanghejia/blender_assets","n":[1353,987,12],"c":{"vehicles":"交通工具"}}</script>
+<script id="tiles" type="application/json">{"s":["budeco-vehicles-00.webp?v=f6e1173e74","budeco-vehicles-01.webp?v=1f89182d96"],"t":[["budeco_1104","budeco","vehicles",0,0,0,0,1794324166,0,1,"budeco/vehicles/budeco_1104","126893"],["budeco_1163","budeco","vehicles",0,1,1,0,1794324380,1,1,"budeco/vehicles/budeco_1163","115686"],["budeco_1171","budeco","vehicles",0,5,0,0,1794325028,0,1,"budeco/vehicles/budeco_1171","65838"],["budeco_1174","budeco","vehicles",0,6,0,0,1794333450,0,1,"budeco/vehicles/budeco_1174","35411"],["budeco_1167","budeco","vehicles",0,8,0,0,1794325026,0,1,"budeco/vehicles/budeco_1167","69987"],["budeco_1172","budeco","vehicles",0,9,0,0,1794325029,0,1,"budeco/vehicles/budeco_1172","65867"],["budeco_1177","budeco","vehicles",0,10,0,0,1794363733,0,1,"budeco/vehicles/budeco_1177","35410"],["budeco_1173","budeco","vehicles",0,11,0,0,1794333452,0,1,"budeco/vehicles/budeco_1173","35943"],["budeco_1160","budeco","vehicles",1,0,0,0,1794363812,0,1,"budeco/vehicles/budeco_1160","65831"],["budeco_1457","budeco","vehicles",1,4,0,0,1794566121,1,1,"budeco/vehicles/budeco_1457","37762"],["budeco_1449","budeco","vehicles",1,5,0,15,1794564217,0,1,"budeco/vehicles/budeco_1449","65874"],["budeco_1467","budeco","vehicles",1,7,0,15,1794564737,0,1,"budeco/vehicles/budeco_1467","35540"]],"r":"/mnt/nas_beijing/users/zhanghejia/blender_assets","n":[1353,987,12],"c":{"vehicles":"交通工具"}}</script>
 <script>
 (function(){
   var M='/media/',grid=document.getElementById('grid'),none=document.getElementById('none'),shown=null,D=null,tiles={},order=[],at=-1;
@@ -90,6 +91,7 @@ header{padding:clamp(20px,3vw,40px) 0 18px}
       if(!li){
         li=document.createElement('li');var b=document.createElement('button'),p=document.createElement('p'),a=document.createElement('span'),c=document.createElement('span');
         b.className='shot';b.type='button';p.appendChild(a);p.appendChild(c);li.appendChild(b);li.appendChild(p);li._b=b;li._a=a;li._c=c;
+        li._s=document.createElement('p');li._s.className='sid';li.appendChild(li._s);
         b.addEventListener('click',function(){open(order.indexOf(b._r[0]));});
         tiles[r[0]]=li;if(io)io.observe(b);else b._on=1;
       }
@@ -97,7 +99,7 @@ header{padding:clamp(20px,3vw,40px) 0 18px}
       if(!r[5]&&b._vid){b._vid.remove();b._vid=null;}
       b.style.backgroundPosition=((k%4*528+8)/16.0)+'% '+((Math.floor(k/4)*528+8)/10.72)+'%';
       if(b._on)paint(b);
-      li._a.textContent=r[0];li._c.textContent=D.c[r[2]]||r[2];b.setAttribute('aria-label',r[0]+' '+(D.c[r[2]]||r[2]));
+      li._a.textContent=r[0];li._c.textContent=D.c[r[2]]||r[2];li._s.textContent=r[11]||'';li._s.title=r[11]?r[1]+' ID '+r[11]:'';b.setAttribute('aria-label',r[0]+' '+(D.c[r[2]]||r[2]));
       seen[r[0]]=1;order.push(r[0]);frag.appendChild(li);
     });
     Object.keys(tiles).forEach(function(n){if(!seen[n]){if(io)io.unobserve(tiles[n]._b);tiles[n].remove();delete tiles[n];}});
@@ -119,7 +121,7 @@ header{padding:clamp(20px,3vw,40px) 0 18px}
       if(k==='anim')b.textContent='▶';else b.style.backgroundImage='url("'+(k==='preview'?M+'full/'+r[0]+'.webp?v='+r[7]:M+'v/'+r[0]+'_'+k+'.webp?v='+r[7])+'")';
       b.addEventListener('click',function(){show(k,r,b);});views.appendChild(b);});
     views.style.display=kinds.length>1?'flex':'none';
-    cap.innerHTML='';var b=document.createElement('b');b.textContent=r[0];cap.appendChild(b);cap.appendChild(document.createTextNode('  '+(D.c[r[2]]||r[2])+'  '+r[1]));
+    cap.innerHTML='';var b=document.createElement('b');b.textContent=r[0];cap.appendChild(b);cap.appendChild(document.createTextNode('  '+(D.c[r[2]]||r[2])+'  '+r[1]+(r[11]?'  '+r[11]:'')));
     show(kinds[0],r,views.children[0]);lb.className='open';document.body.style.overflow='hidden';document.getElementById('close').focus();
   }
   function shut(){lb.className='';stage.textContent='';document.body.style.overflow='';if(at>=0&&tiles[order[at]])tiles[order[at]]._b.focus();at=-1;}
@@ -129,8 +131,8 @@ header{padding:clamp(20px,3vw,40px) 0 18px}
   // Export list: the assets of this page as a tab-separated file, same layout as blender_assets/clean_assets.tsv plus category and cleaned
   document.getElementById('export').addEventListener('click',function(){
     var cell=function(x){return String(x).replace(/[\t\r\n]+/g,' ');};
-    var lines=[['编号','资产类型','网站来源','分类','已清洗','资产目录'].join('\t')];
-    D.t.forEach(function(r){lines.push([r[0],r[8]?'dynamic':'static',r[1],D.c[r[2]]||r[2],r[9]?'是':'否',r[10]?D.r+'/'+r[10]:''].map(cell).join('\t'));});
+    var lines=[['编号','资产类型','网站来源','源站ID','分类','已清洗','资产目录'].join('\t')];
+    D.t.forEach(function(r){lines.push([r[0],r[8]?'dynamic':'static',r[1],r[11]||'',D.c[r[2]]||r[2],r[9]?'是':'否',r[10]?D.r+'/'+r[10]:''].map(cell).join('\t'));});
     var part=location.pathname.split('/').filter(Boolean),at=Math.max(part.indexOf('total'),part.indexOf('clean'));
     var name=(at<0?['total']:part.slice(at)).map(decodeURIComponent).join('_').replace(/[^\w.-]+/g,'-');
     var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([lines.join('\n')+'\n'],{type:'text/tab-separated-values;charset=utf-8'}));
