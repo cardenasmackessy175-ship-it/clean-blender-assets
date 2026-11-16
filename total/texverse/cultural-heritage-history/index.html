@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>total blender assets</title>
+<style>
+:root{--page:#e9eaec;--ink:#16181d;--quiet:#70757d;--tile:#d9dbdf;--line:#cfd2d7;--focus:#e87d0d}
+@media (prefers-color-scheme:dark){:root{--page:#1d1e21;--ink:#ecedef;--quiet:#8f949c;--tile:#2a2c30;--line:#34373c}}
+*{box-sizing:border-box}
+html{background:var(--page)}
+body{margin:0;color:var(--ink);font-family:"Avenir Next","Segoe UI Variable Display","Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1560px;margin:0 auto;padding:0 clamp(16px,3vw,44px)}
+header{padding:clamp(20px,3vw,40px) 0 18px}
+.sets{display:flex;flex-wrap:wrap;gap:4px clamp(18px,3vw,40px);font-size:clamp(22px,2.9vw,40px);font-weight:600;letter-spacing:-.03em;line-height:1.15}
+.sets a{color:var(--quiet)}.sets a.on{color:var(--ink)}
+.sets .n{margin-left:.45em;font-size:.5em;font-weight:500;letter-spacing:0;color:var(--quiet);font-variant-numeric:tabular-nums;vertical-align:.5em}
+#count{margin:0 0 14px;display:flex;align-items:center;gap:14px;font-size:14px;color:var(--quiet);font-variant-numeric:tabular-nums}
+#export{padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--ink);font:inherit;font-size:13px;cursor:pointer}
+#export:hover{background:var(--ink);border-color:var(--ink);color:var(--page)}
+.row{display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:16px;font-size:14px}
+.row a{padding:5px 12px;border-radius:999px;border:1px solid var(--line);color:var(--quiet);white-space:nowrap}
+.row a.on{background:var(--ink);border-color:var(--ink);color:var(--page)}
+.row.cats{margin-top:10px;font-size:13px}.row.cats a{padding:4px 10px}
+#grid{list-style:none;margin:0;padding:0 0 80px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px 18px}
+.shot{display:block;position:relative;width:100%;aspect-ratio:1;padding:0;border:0;border-radius:4px;overflow:hidden;cursor:zoom-in;background-color:var(--tile);background-repeat:no-repeat;background-size:412.5% 309.375%}
+.shot video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .25s}
+.shot video.live{opacity:1}
+#grid p{margin:8px 0 0;display:flex;justify-content:space-between;gap:10px;font-size:13px;line-height:1.35;color:var(--quiet)}
+#grid p span{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+#grid p span:first-child{color:var(--ink);font-variant-numeric:tabular-nums}
+#none{padding:40px 0 120px;color:var(--quiet)}
+#lb{position:fixed;inset:0;z-index:9;display:none;background:rgba(12,13,15,.94);color:#ecedef}
+#lb.open{display:grid;grid-template-rows:minmax(0,1fr) auto;gap:12px;padding:20px clamp(12px,4vw,64px) 18px}
+#stage{min-height:0;display:flex;align-items:center;justify-content:center}
+#stage img,#stage video{max-width:100%;max-height:100%;border-radius:4px;background:#2a2c30}
+#lbbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+#views{display:flex;gap:8px}
+#views button{width:68px;height:68px;padding:0;border:2px solid transparent;border-radius:4px;background:#2a2c30 center/cover no-repeat;cursor:pointer;color:#ecedef;font:12px/1 inherit}
+#views button.on{border-color:#ecedef}
+#lbcap{margin-left:auto;font-size:14px;color:#aeb2b9;text-align:right}
+#lbcap b{color:#ecedef;font-weight:600}
+.ctl{position:absolute;top:50%;width:46px;height:64px;margin-top:-52px;border:0;border-radius:4px;background:rgba(255,255,255,.08);color:#ecedef;font-size:26px;cursor:pointer}
+#prev{left:8px}#next{right:8px}
+#close{position:absolute;top:10px;right:12px;width:40px;height:40px;border:0;border-radius:4px;background:rgba(255,255,255,.08);color:#ecedef;font-size:22px;cursor:pointer}
+@media (max-width:720px){#grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 10px}.ctl{display:none}}
+@media (prefers-reduced-motion:reduce){.shot video{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<nav class="sets" aria-label="set"><a href="/clean-blender-assets/total/" class="on">total blender assets<span class="n"></span></a><a href="/clean-blender-assets/clean/">clean blender assets<span class="n"></span></a></nav>
+<nav class="row" aria-label="source"><a href="/clean-blender-assets/total/">all</a><a href="/clean-blender-assets/total/budeco/">budeco</a><a href="/clean-blender-assets/total/blenderkit/">blenderkit</a><a href="/clean-blender-assets/total/texverse/" class="on">texverse</a></nav>
+<nav class="row cats" aria-label="category"><a href="/clean-blender-assets/total/texverse/">all</a><a href="/clean-blender-assets/total/texverse/animals-pets/">Animals &amp; Pets</a><a href="/clean-blender-assets/total/texverse/architecture/">Architecture</a><a href="/clean-blender-assets/total/texverse/art-abstract/">Art &amp; Abstract</a><a href="/clean-blender-assets/total/texverse/cars-vehicles/">Cars &amp; Vehicles</a><a href="/clean-blender-assets/total/texverse/characters-creatures/">Characters &amp; Creatures</a><a href="/clean-blender-assets/total/texverse/cultural-heritage-history/" class="on">Cultural Heritage &amp; History</a><a href="/clean-blender-assets/total/texverse/electronics-gadgets/">Electronics &amp; Gadgets</a><a href="/clean-blender-assets/total/texverse/fashion-style/">Fashion &amp; Style</a><a href="/clean-blender-assets/total/texverse/furniture-home/">Furniture &amp; Home</a><a href="/clean-blender-assets/total/texverse/people/">People</a><a href="/clean-blender-assets/total/texverse/places-travel/">Places &amp; Travel</a><a href="/clean-blender-assets/total/texverse/science-technology/">Science &amp; Technology</a><a href="/clean-blender-assets/total/texverse/uncategorized/">Uncategorized</a><a href="/clean-blender-assets/total/texverse/weapons-military/">Weapons &amp; Military</a></nav>
+</header>
+<p id="count"><span id="cnt"></span><button id="export" type="button">Export list</button></p>
+<ul id="grid"></ul>
+<div id="none" hidden>No assets here yet.</div>
+</div>
+<div id="lb" role="dialog" aria-modal="true" aria-label="asset">
+<div id="stage"></div>
+<div id="lbbar"><div id="views"></div><div id="lbcap"></div></div>
+<button class="ctl" id="prev" aria-label="previous">&#8249;</button><button class="ctl" id="next" aria-label="next">&#8250;</button>
+<button id="close" aria-label="close">&#215;</button>
+</div>
+<script id="tiles" type="application/json">{"s":["texverse-cultural-heritage-history-00.webp?v=4ce47123a0","texverse-cultural-heritage-history-01.webp?v=21c0ef1bfc","texverse-cultural-heritage-history-02.webp?v=c960b7afd7","texverse-cultural-heritage-history-03.webp?v=c58fb9f1a0"],"t":[["texverse_3509","texverse","cultural-heritage-history",0,0,0,15,1794743124,0,1,"texverse/cultural-heritage-history/texverse_3509"],["texverse_3593","texverse","cultural-heritage-history",0,1,0,15,1794802275,0,1,"texverse/cultural-heritage-history/texverse_3593"],["texverse_3613","texverse","cultural-heritage-history",0,2,1,0,1794636918,1,0,"texverse/cultural-heritage-history/texverse_3613"],["texverse_3468","texverse","cultural-heritage-history",0,3,0,15,1794751666,0,1,"texverse/cultural-heritage-history/texverse_3468"],["texverse_2199","texverse","cultural-heritage-history",0,4,0,15,1794670627,0,0,"texverse/cultural-heritage-history/texverse_2199"],["texverse_1687","texverse","cultural-heritage-history",0,5,0,15,1794748278,0,1,"texverse/cultural-heritage-history/texverse_1687"],["texverse_2258","texverse","cultural-heritage-history",0,6,0,15,1794573554,0,0,"texverse/cultural-heritage-history/texverse_2258"],["texverse_1321","texverse","cultural-heritage-history",0,7,0,15,1794802967,0,1,"texverse/cultural-heritage-history/texverse_1321"],["texverse_1556","texverse","cultural-heritage-history",0,8,0,15,1794802255,0,1,"texverse/cultural-heritage-history/texverse_1556"],["texverse_3501","texverse","cultural-heritage-history",0,9,0,15,1794762155,0,1,"texverse/cultural-heritage-history/texverse_3501"],["texverse_3487","texverse","cultural-heritage-history",0,10,0,15,1794635027,0,0,"texverse/cultural-heritage-history/texverse_3487"],["texverse_3519","texverse","cultural-heritage-history",0,11,0,15,1794748377,0,1,"texverse/cultural-heritage-history/texverse_3519"],["texverse_3595","texverse","cultural-heritage-history",1,0,0,15,1794749537,0,1,"texverse/cultural-heritage-history/texverse_3595"],["texverse_0998","texverse","cultural-heritage-history",1,1,0,15,1793943705,0,0,"texverse/texverse_0998"],["texverse_1787","texverse","cultural-heritage-history",1,2,0,15,1794751551,0,1,"texverse/cultural-heritage-history/texverse_1787"],["texverse_2926","texverse","cultural-heritage-history",1,3,0,15,1794801066,0,1,"texverse/cultural-heritage-history/texverse_2926"],["texverse_1973","texverse","cultural-heritage-history",1,4,1,0,1794749083,1,1,"texverse/cultural-heritage-history/texverse_1973"],["texverse_1621","texverse","cultural-heritage-history",1,5,0,15,1794751544,0,1,"texverse/cultural-heritage-history/texverse_1621"],["texverse_0172","texverse","cultural-heritage-history",1,6,0,15,1794762136,0,1,"texverse/cultural-heritage-history/texverse_0172"],["texverse_3507","texverse","cultural-heritage-history",1,7,0,15,1794762157,0,1,"texverse/cultural-heritage-history/texverse_3507"],["texverse_2117","texverse","cultural-heritage-history",1,8,0,15,1794803004,0,1,"texverse/cultural-heritage-history/texverse_2117"],["texverse_3474","texverse","cultural-heritage-history",1,9,0,15,1794762154,0,1,"texverse/cultural-heritage-history/texverse_3474"],["texverse_3490","texverse","cultural-heritage-history",1,10,0,15,1794746309,0,1,"texverse/cultural-heritage-history/texverse_3490"],["texverse_1951","texverse","cultural-heritage-history",1,11,0,15,1794577368,0,0,"texverse/cultural-heritage-history/texverse_1951"],["texverse_1901","texverse","cultural-heritage-history",2,0,1,0,1794749790,1,1,"texverse/cultural-heritage-history/texverse_1901"],["texverse_2259","texverse","cultural-heritage-history",2,1,0,15,1794748331,0,1,"texverse/cultural-heritage-history/texverse_2259"],["texverse_2936","texverse","cultural-heritage-history",2,2,0,15,1794803042,0,1,"texverse/cultural-heritage-history/texverse_2936"],["texverse_0627","texverse","cultural-heritage-history",2,3,0,15,1794743051,0,1,"texverse/cultural-heritage-history/texverse_0627"],["texverse_1469","texverse","cultural-heritage-history",2,4,0,15,1794577531,0,0,"texverse/cultural-heritage-history/texverse_1469"],["texverse_0784","texverse","cultural-heritage-history",2,5,0,15,1794748179,0,1,"texverse/cultural-heritage-history/texverse_0784"],["texverse_3531","texverse","cultural-heritage-history",2,6,0,15,1794635768,0,0,"texverse/cultural-heritage-history/texverse_3531"],["texverse_1494","texverse","cultural-heritage-history",2,7,0,15,1794577457,0,0,"texverse/cultural-heritage-history/texverse_1494"],["texverse_1801","texverse","cultural-heritage-history",2,8,0,15,1794636334,0,0,"texverse/cultural-heritage-history/texverse_1801"],["texverse_1977","texverse","cultural-heritage-history",2,9,0,15,1794635964,0,0,"texverse/cultural-heritage-history/texverse_1977"],["texverse_1362","texverse","cultural-heritage-history",2,10,0,15,1794748249,0,1,"texverse/cultural-heritage-history/texverse_1362"],["texverse_1912","texverse","cultural-heritage-history",2,11,0,15,1794751573,0,1,"texverse/cultural-heritage-history/texverse_1912"],["texverse_2113","texverse","cultural-heritage-history",3,0,0,15,1794577647,0,0,"texverse/cultural-heritage-history/texverse_2113"],["texverse_1980","texverse","cultural-heritage-history",3,1,0,15,1794802993,0,1,"texverse/cultural-heritage-history/texverse_1980"],["texverse_1669","texverse","cultural-heritage-history",3,2,0,15,1794802983,0,1,"texverse/cultural-heritage-history/texverse_1669"],["texverse_3564","texverse","cultural-heritage-history",3,3,0,15,1794636267,0,0,"texverse/cultural-heritage-history/texverse_3564"],["texverse_2260","texverse","cultural-heritage-history",3,4,0,15,1794748334,0,1,"texverse/cultural-heritage-history/texverse_2260"],["texverse_1978","texverse","cultural-heritage-history",3,5,0,15,1794802260,0,1,"texverse/cultural-heritage-history/texverse_1978"],["texverse_1652","texverse","cultural-heritage-history",3,6,0,15,1794636783,0,0,"texverse/cultural-heritage-history/texverse_1652"],["texverse_1073","texverse","cultural-heritage-history",3,7,0,15,1794748192,0,1,"texverse/cultural-heritage-history/texverse_1073"]],"r":"/mnt/nas_beijing/users/zhanghejia/blender_assets","n":[1353,987,44],"c":{"cultural-heritage-history":"Cultural Heritage & History"}}</script>
+<script>
+(function(){
+  var M='/clean-blender-assets/media/',grid=document.getElementById('grid'),none=document.getElementById('none'),shown=null,D=null,tiles={},order=[],at=-1;
+  var VN=['front','side','top','close'];
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){
+    var b=e.target;
+    if(e.isIntersecting){if(!b._on){b._on=1;paint(b);}if(b._v)play(b);}else if(b._vid)b._vid.pause();
+  });},{rootMargin:'700px 0px'}):null;
+  function paint(b){b.style.backgroundImage='url("'+M+'s/'+D.s[b._s]+'")';}
+  function play(b){
+    if(!b._vid){var v=document.createElement('video');v.muted=true;v.loop=true;v.playsInline=true;v.preload='auto';v.setAttribute('playsinline','');
+      v.addEventListener('playing',function(){v.className='live';});v.src=M+'a/'+b._r[0]+'.mp4?v='+b._r[7];b.appendChild(v);b._vid=v;}
+    var p=b._vid.play();if(p&&p.catch)p.catch(function(){});
+  }
+  function draw(text,live){
+    D=JSON.parse(text);var seen={},frag=document.createDocumentFragment();order=[];
+    D.t.forEach(function(r){
+      var li=tiles[r[0]];
+      if(!li){
+        li=document.createElement('li');var b=document.createElement('button'),p=document.createElement('p'),a=document.createElement('span'),c=document.createElement('span');
+        b.className='shot';b.type='button';p.appendChild(a);p.appendChild(c);li.appendChild(b);li.appendChild(p);li._b=b;li._a=a;li._c=c;
+        b.addEventListener('click',function(){open(order.indexOf(b._r[0]));});
+        tiles[r[0]]=li;if(io)io.observe(b);else b._on=1;
+      }
+      var b=li._b,k=r[4];b._r=r;b._s=r[3];b._v=r[5];
+      if(!r[5]&&b._vid){b._vid.remove();b._vid=null;}
+      b.style.backgroundPosition=((k%4*528+8)/16.0)+'% '+((Math.floor(k/4)*528+8)/10.72)+'%';
+      if(b._on)paint(b);
+      li._a.textContent=r[0];li._c.textContent=D.c[r[2]]||r[2];b.setAttribute('aria-label',r[0]+' '+(D.c[r[2]]||r[2]));
+      seen[r[0]]=1;order.push(r[0]);frag.appendChild(li);
+    });
+    Object.keys(tiles).forEach(function(n){if(!seen[n]){if(io)io.unobserve(tiles[n]._b);tiles[n].remove();delete tiles[n];}});
+    grid.appendChild(frag);none.hidden=D.t.length>0;shown=text;
+    var ns=document.querySelectorAll('.sets .n');if(D.n&&ns.length>1){ns[0].textContent=D.n[0];ns[1].textContent=D.n[1];document.getElementById('cnt').textContent=D.n[2]+' assets';}
+    document.getElementById('export').hidden=!D.t.length;
+  }
+  var lb=document.getElementById('lb'),stage=document.getElementById('stage'),views=document.getElementById('views'),cap=document.getElementById('lbcap');
+  function show(kind,r,btn){
+    stage.textContent='';var el;
+    if(kind==='anim'){el=document.createElement('video');el.controls=true;el.loop=true;el.muted=true;el.autoplay=true;el.playsInline=true;el.src=M+'a/'+r[0]+'.mp4?v='+r[7];}
+    else{el=document.createElement('img');el.alt=r[0];el.src=kind==='preview'?M+'full/'+r[0]+'.webp?v='+r[7]:M+'v/'+r[0]+'_'+kind+'.webp?v='+r[7];}
+    stage.appendChild(el);[].forEach.call(views.children,function(x){x.className=x===btn?'on':'';});
+  }
+  function open(i){
+    if(i<0||i>=order.length)return;at=i;var r=tiles[order[i]]._b._r;views.textContent='';
+    var kinds=(r[5]?['anim']:[]).concat(['preview']).concat(VN.filter(function(v,k){return r[6]>>k&1;}));
+    kinds.forEach(function(k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label',k);
+      if(k==='anim')b.textContent='▶';else b.style.backgroundImage='url("'+(k==='preview'?M+'full/'+r[0]+'.webp?v='+r[7]:M+'v/'+r[0]+'_'+k+'.webp?v='+r[7])+'")';
+      b.addEventListener('click',function(){show(k,r,b);});views.appendChild(b);});
+    views.style.display=kinds.length>1?'flex':'none';
+    cap.innerHTML='';var b=document.createElement('b');b.textContent=r[0];cap.appendChild(b);cap.appendChild(document.createTextNode('  '+(D.c[r[2]]||r[2])+'  '+r[1]));
+    show(kinds[0],r,views.children[0]);lb.className='open';document.body.style.overflow='hidden';document.getElementById('close').focus();
+  }
+  function shut(){lb.className='';stage.textContent='';document.body.style.overflow='';if(at>=0&&tiles[order[at]])tiles[order[at]]._b.focus();at=-1;}
+  document.getElementById('close').onclick=shut;document.getElementById('prev').onclick=function(){open(at-1);};document.getElementById('next').onclick=function(){open(at+1);};
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target===stage)shut();});
+  document.addEventListener('keydown',function(e){if(lb.className!=='open')return;if(e.key==='Escape')shut();else if(e.key==='ArrowLeft')open(at-1);else if(e.key==='ArrowRight')open(at+1);});
+  // Export list: the assets of this page as a tab-separated file, same layout as blender_assets/clean_assets.tsv plus category and cleaned
+  document.getElementById('export').addEventListener('click',function(){
+    var cell=function(x){return String(x).replace(/[\t\r\n]+/g,' ');};
+    var lines=[['编号','资产类型','网站来源','分类','已清洗','资产目录'].join('\t')];
+    D.t.forEach(function(r){lines.push([r[0],r[8]?'dynamic':'static',r[1],D.c[r[2]]||r[2],r[9]?'是':'否',r[10]?D.r+'/'+r[10]:''].map(cell).join('\t'));});
+    var part=location.pathname.split('/').filter(Boolean),at=Math.max(part.indexOf('total'),part.indexOf('clean'));
+    var name=(at<0?['total']:part.slice(at)).map(decodeURIComponent).join('_').replace(/[^\w.-]+/g,'-');
+    var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([lines.join('\n')+'\n'],{type:'text/tab-separated-values;charset=utf-8'}));
+    a.download='blender_assets_'+name+'.tsv';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href);},2000);
+  });
+  draw(document.getElementById('tiles').textContent,false);
+  function refresh(){
+    if(document.hidden||lb.className==='open')return;
+    fetch(location.pathname,{cache:'no-store'}).then(function(r){return r.ok?r.text():null;}).then(function(h){
+      if(!h)return;var m=h.match(/<script id="tiles" type="application\/json">([\s\S]*?)<\/script>/);
+      if(m&&m[1]!==shown)draw(m[1],true);
+    }).catch(function(){});
+  }
+  setInterval(refresh,30000);document.addEventListener('visibilitychange',refresh);
+})();
+</script>
+</body>
+</html>
