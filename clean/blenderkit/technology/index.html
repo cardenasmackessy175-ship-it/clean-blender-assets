@@ -54,9 +54,9 @@ header{padding:clamp(20px,3vw,40px) 0 18px}
 <body>
 <div class="wrap">
 <header>
-<nav class="sets" aria-label="set"><a href="/clean-blender-assets/total/">total blender assets<span class="n"></span></a><a href="/clean-blender-assets/clean/" class="on">clean blender assets<span class="n"></span></a></nav>
-<nav class="row" aria-label="source"><a href="/clean-blender-assets/clean/">all</a><a href="/clean-blender-assets/clean/budeco/">budeco</a><a href="/clean-blender-assets/clean/blenderkit/" class="on">blenderkit</a><a href="/clean-blender-assets/clean/texverse/">texverse</a></nav>
-<nav class="row cats" aria-label="category"><a href="/clean-blender-assets/clean/blenderkit/">all</a><a href="/clean-blender-assets/clean/blenderkit/industrial/">Industrial</a><a href="/clean-blender-assets/clean/blenderkit/interior/">Interior</a><a href="/clean-blender-assets/clean/blenderkit/technology/" class="on">Technology</a></nav>
+<nav class="sets" aria-label="set"><a href="/total/">total blender assets<span class="n"></span></a><a href="/clean/" class="on">clean blender assets<span class="n"></span></a></nav>
+<nav class="row" aria-label="source"><a href="/clean/">all</a><a href="/clean/budeco/">budeco</a><a href="/clean/blenderkit/" class="on">blenderkit</a><a href="/clean/texverse/">texverse</a></nav>
+<nav class="row cats" aria-label="category"><a href="/clean/blenderkit/">all</a><a href="/clean/blenderkit/industrial/">Industrial</a><a href="/clean/blenderkit/interior/">Interior</a><a href="/clean/blenderkit/technology/" class="on">Technology</a></nav>
 </header>
 <p id="count"><span id="cnt"></span><button id="export" type="button">Export list</button></p>
 <ul id="grid"></ul>
@@ -71,7 +71,7 @@ header{padding:clamp(20px,3vw,40px) 0 18px}
 <script id="tiles" type="application/json">{"s":["blenderkit-technology-00.webp?v=eaca9c0cb2","blenderkit-technology-01.webp?v=0acbddf7fc"],"t":[["blenderkit_1635","blenderkit","technology",0,2,0,15,1794743023,0,1,"blenderkit/technology/blenderkit_1635"],["blenderkit_0296","blenderkit","technology",0,3,0,0,1794411853,1,1,"blenderkit/technology/blenderkit_0296"],["blenderkit_0018","blenderkit","technology",0,4,0,15,1794748126,0,1,"blenderkit/technology/blenderkit_0018"],["blenderkit_1656","blenderkit","technology",0,5,0,15,1794749390,0,1,"blenderkit/technology/blenderkit_1656"],["blenderkit_1659","blenderkit","technology",0,6,0,15,1794802922,0,1,"blenderkit/technology/blenderkit_1659"],["blenderkit_0083","blenderkit","technology",0,7,0,15,1794743016,0,1,"blenderkit/technology/blenderkit_0083"],["blenderkit_1734","blenderkit","technology",0,9,0,15,1794743031,0,1,"blenderkit/technology/blenderkit_1734"],["blenderkit_0290","blenderkit","technology",1,1,1,0,1794802124,1,1,"blenderkit/technology/blenderkit_0290"],["blenderkit_1667","blenderkit","technology",1,2,0,15,1794802234,0,1,"blenderkit/technology/blenderkit_1667"],["blenderkit_0291","blenderkit","technology",1,7,0,15,1794802912,0,1,"blenderkit/technology/blenderkit_0291"],["blenderkit_1731","blenderkit","technology",1,9,0,15,1794743029,0,1,"blenderkit/technology/blenderkit_1731"]],"r":"/mnt/nas_beijing/users/zhanghejia/blender_assets","n":[1353,987,11],"c":{"technology":"Technology"}}</script>
 <script>
 (function(){
-  var M='/clean-blender-assets/media/',grid=document.getElementById('grid'),none=document.getElementById('none'),shown=null,D=null,tiles={},order=[],at=-1;
+  var M='/media/',grid=document.getElementById('grid'),none=document.getElementById('none'),shown=null,D=null,tiles={},order=[],at=-1;
   var VN=['front','side','top','close'];
   var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){
     var b=e.target;
